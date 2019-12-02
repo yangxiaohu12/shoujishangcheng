@@ -1,33 +1,26 @@
 <template>
   <div class="photoinfo-container">
     <h3 class="title">{{ photoinfo.title }}</h3>
-
     <p class="info">
       <span>发表时间：{{ photoinfo.add_time | dateFormat }}</span>
       <span>点击：{{ photoinfo.click }}次</span>
     </p>
-
     <hr>
-
     <!-- 缩略图区域 -->
     <div class="thumb-img-list">
       <!-- 使用 v-for 循环渲染缩略图 -->
       <vue-preview :slides="slide1" @close="handleClose"></vue-preview>
     </div>
-
     <!-- 内容区域 -->
     <div class="content" v-html="photoinfo.content"></div>
-
     <!-- 评论子组件 -->
     <!-- 注意：在使用评论子组件的时候，人家必须要接收一个 newsid 的属性 -->
     <comment :newsid="id"></comment>
   </div>
 </template>
-
 <script>
 // 导入评论子组件
 import comment from "../sub-components/Comment.vue";
-
 export default {
   data() {
     return {
@@ -57,7 +50,6 @@ export default {
           item.w = 600;
           item.h = 400;
         });
-
         this.slide1 = data.message;
       }
     }
@@ -68,7 +60,6 @@ export default {
   }
 };
 </script>
-
 <style lang="scss" scoped>
 .photoinfo-container {
   padding: 3px;

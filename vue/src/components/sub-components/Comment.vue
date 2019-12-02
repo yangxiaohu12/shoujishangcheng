@@ -15,13 +15,9 @@
       <div class="cmt-item-body">{{item.content}}</div>
     </div>
   </div>
-
-
     <mt-button type="danger" size="large" plain @click="loadMore">加载更多</mt-button>
-
   </div>
 </template>
-
 <script>
 // 按需从 MintUI 中，导出需要的 弹框组件
 import { Toast } from "mint-ui";
